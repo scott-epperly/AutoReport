@@ -202,22 +202,19 @@ For more information regarding Azure Data Explorer (Kusto) connection strings, p
 https://docs.microsoft.com/en-us/azure/kusto/api/connection-strings/kusto
 
 ### Template File
-Each OutputType will require a template file in order to apply the data source queries.  The template file name must be Template._ext_, where _ext_ is the appropriate extension for the OutputType you are creating.  Each template type has unique requirements; please review the appropriate Output Type for template guidance:
+Each OutputType will require a template file in order to apply the data source queries.  Each template type has unique requirements; please review the appropriate Output Type for template guidance:
 
 #### Excel OutputType Templates
-Excel is perhaps one of the easiest to create.  Simply format the area(s) around where you intend to land the data table, give tabs appropriate names, and save the file as Template.xls[x|m|b].
+Excel is perhaps one of the easiest to create.  Simply format the area(s) around where you intend to land the data table, give tabs appropriate names, and save the file as Template.xls[x|m|b].  Alternatively, you can have a practically blank template workbook and the Worksheet names referenced in the config.json will be created if the Worksheet names don't exist.
 
 ### Queries
-The last component of the AutoReportPack are the queries that are to be executed to populate the Output File.  The module currently supports two (2) types of query files:
-1. .csl for KQL (Azure Data Explorer)
-2. .sql for SQL Server, Azure SQL, or Azure Synapse Analytics
-As already referenced in the config.json section above, the queries are referenced in the Mappings section to guide the process of populating the Output File.
+The last component of the AutoReportPack are the queries that are to be executed to populate the Output File.  As already referenced in the config.json section above, the queries are referenced in the Mappings section to guide the process of populating the Output File.
 
-It's important to note that multiple result sets are supported for both query types; you may choose to implement this approach in your query files.  However, it is generally recommended to limit each query file to just one result set to simplify query code maintenance.
+It's important to note that multiple result sets are supported for both query types; you may choose to implement this approach in your query files.  The DataSetId However, it is generally recommended to limit each query file to just one result set to simplify query code maintenance.
 
 Lastly, most of the Output Types include a header with the data produced.  The header name used will match the name of the column.  Be sure you name the columns with a user-friendly name that accurately describes the data and doesn't heavily rely on unkonwn acronyms and/or source system column names.
 
-#### Working with KQL (.kql) Files
+#### Working with KQL (.kql or .csl) Files
 Query parameters should be specified in the UserParamHash parameter of Invoke-AutoReport.  The parameter names need to match the names in your KQL query files using the `declare query_parameters(myAppName:string, myRequestId:string);`.  For example, let's say you have the following query:
 
 ```KQL
@@ -233,9 +230,10 @@ Export-AutoReport
     -UserParamHash @(@{"pLastName"="Mouse"; "pFirstName"="Mickey"}, @{"pLastName"="Duck"; "pFirstName"="Donald"})
 ```
 
+
 #### Working with SQL (.sql) Files
-Working with parameters for SQL files takes a bit more work AutoReport supports multiple data providers in order to facilitate a larger range of sources; please see DataProviderName in the 
-Please reference [Configuring parameters and parameter data types](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/configuring-parameters-and-parameter-data-types?view=netframework-4.8) for a reference on which data type
+AutoReport supports multiple data providers in order to facilitate a larger range of sources; please see the possible values of DataProviderName in the SourceMaps section.  Note: all but Kusto are considered to be SQL files.
+Please reference [Configuring parameters and parameter data types](https://docs.microsoft.com/en-us/dotnet/framework/data/adonet/configuring-parameters-and-parameter-data-types?view=netframework-4.8)
 
 Example: SQL Server using SqlClient
 ```SQL
@@ -248,12 +246,12 @@ Your UserParamHash could look like the following:
 ```PowerShell
 Export-AutoReport
     ...
-    -UserParamHash @(@{"pLastName"="Mouse"; "@FirstName"="Mickey"}, @{"pLastName"="Duck"; "pFirstName"="Donald"})
+    -UserParamHash @(@{"LastName"="Mouse"; "FirstName"="Mickey"}, @{"LastName"="Duck"; "FirstName"="Donald"})
 ```
 
 ## Contributing
-Your contributions are welcome!  As you can see, we currently only support output to Excel, but the other types need some love!
+Your contributions are welcome!  As you can see, we currently only support output to Excel, but the other types need some love!  Moreover, there's much work to be done to get all of the anticipated source data providers working as expected.
 
 ## Version History
 ### 0.0.1
-Initial release.  This release only supports Kusto and SqlClient sources as well as the Excel output type.  There are likely lots of bugs, but it's functional enough for initial purposes (e.g. if you're holding your tongue right and the stars are all aligned)!
+Initial release.  This release only supports Kusto (including parameters) and SqlClient sources (without parameters) as well as the Excel output type.  There are likely lots of bugs, but it's functional enough for initial purposes (e.g. if you're holding your tongue right and the stars are all aligned)!
