@@ -43,6 +43,7 @@ class Query{
                 $sqlcmd = [System.Data.SqlClient.SqlCommand]::new();
                 $sqlcmd.Connection = $DBConnection;
                 $sqlcmd.CommandText = $this.QueryText;
+                $sqlcmd.CommandTimeout = 300;
 
                 # Bind Parameters
                 foreach ($key in $UserParamHash.Keys) {
@@ -76,12 +77,21 @@ class Query{
     [System.Collections.ArrayList]GetParameter() {
         [System.Collections.ArrayList]$foundParams = [System.Collections.ArrayList]::new();
         try {
-            $regMatches = (($this.QueryText | Select-String "^declare query_parameters.*").Matches[0].Value | Select-String -Pattern "(\w*):\w*" -AllMatches -ErrorAction SilentlyContinue)
-            foreach ($item in $regMatches.Matches.Groups)
-            {
-                if ($item.Value -notmatch "(\(|\)|\,|\:|\^|\"")") 
-                {
-                    $foundParams.Add([string]($item.Value).Trim()) | Out-Null   
+            switch($this.DataProviderName) {
+                "Kusto" {
+                    $regMatches = (($this.QueryText | Select-String "^declare query_parameters.*").Matches[0].Value | Select-String -Pattern "(\w*):\w*" -AllMatches -ErrorAction SilentlyContinue)
+                    foreach ($item in $regMatches.Matches.Groups)
+                    {
+                        if ($item.Value -notmatch "(\(|\)|\,|\:|\^|\"")") 
+                        {
+                            $foundParams.Add([string]($item.Value).Trim()) | Out-Null   
+                        }
+                    }
+                }
+                "SqlClient" {
+                    ((Select-String -InputObject $this.QueryText -Pattern "(@\w*)" -AllMatches | ForEach-Object{$_.Matches}).Value | Group-Object).Name | ForEach-Object {
+                        $foundParams.Add([string]$_) | Out-Null;
+                    }
                 }
             }
         }

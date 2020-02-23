@@ -1,0 +1,473 @@
+{
+    "Mappings": [
+        {
+            "OutputFileNameTemplate":"$ArTargetConnection`_$(Get-Date -Format yyyy-MM-dd).xlsx",
+            "OutputTemplateName":"Azure SQL Database Diagnostic Results.xlsx",
+            "OutputType":"Excel",
+            "SourceMaps": [
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"0",
+                    "WorksheetName":"Version Info",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"1",
+                    "WorksheetName":"Configuration Values",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"2",
+                    "WorksheetName":"SQL Server NUMA Info",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"3",
+                    "WorksheetName":"IO Stalls by File",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"4",
+                    "WorksheetName":"IO Usage by Database",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"5",
+                    "WorksheetName":"Total Buffer Usage by Database",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"6",
+                    "WorksheetName":"Connection Counts by IP Address",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"7",
+                    "WorksheetName":"Avg Task Counts",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"8",
+                    "WorksheetName":"Detect Blocking",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"9",
+                    "WorksheetName":"PLE by NUMA Node",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"10",
+                    "WorksheetName":"Memory Grants Pending",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"11",
+                    "WorksheetName":"Memory Clerk Usage",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"12",
+                    "WorksheetName":"Ad hoc Queries",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"13",
+                    "WorksheetName":"Azure SQL DB Size",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"14",
+                    "WorksheetName":"File Sizes and Space",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"15",
+                    "WorksheetName":"Log Space Usage",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"16",
+                    "WorksheetName":"VLF Counts",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"17",
+                    "WorksheetName":"Last VLF Status",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"18",
+                    "WorksheetName":"Database Properties",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"19",
+                    "WorksheetName":"Database-scoped Configurations",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"20",
+                    "WorksheetName":"IO Stats By File",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"21",
+                    "WorksheetName":"Recent Resource Usage",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"22",
+                    "WorksheetName":"Avg/Max Resource Usage",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"23",
+                    "WorksheetName":"Top DB Waits",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"24",
+                    "WorksheetName":"Query Execution Counts",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"25",
+                    "WorksheetName":"Top Worker Time Queries",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"26",
+                    "WorksheetName":"Top Logical Reads Queries",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"27",
+                    "WorksheetName":"Top Avg Elapsed Time Queries",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"28",
+                    "WorksheetName":"SP Execution Counts",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"29",
+                    "WorksheetName":"SP Avg Elapsed Time",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"30",
+                    "WorksheetName":"SP Worker Time",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"31",
+                    "WorksheetName":"SP Logical Reads",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"32",
+                    "WorksheetName":"SP Physical Reads",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"33",
+                    "WorksheetName":"SP Logical Writes",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"34",
+                    "WorksheetName":"Top IO Statements",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"35",
+                    "WorksheetName":"Bad NC Indexes",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"36",
+                    "WorksheetName":"Missing Indexes",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"37",
+                    "WorksheetName":"Missing Index Warnings",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"38",
+                    "WorksheetName":"Buffer Usage",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"39",
+                    "WorksheetName":"Table Sizes",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"40",
+                    "WorksheetName":"Table Properties",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"41",
+                    "WorksheetName":"Statistics Update",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"42",
+                    "WorksheetName":"Volatile Indexes",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"43",
+                    "WorksheetName":"Index Fragmentation",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"44",
+                    "WorksheetName":"Overall Index Usage - Reads",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"45",
+                    "WorksheetName":"Overall Index Usage - Writes",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"46",
+                    "WorksheetName":"XTP Index Usage",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"47",
+                    "WorksheetName":"Columnstore Index Physical Stat",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"48",
+                    "WorksheetName":"Lock Waits",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"49",
+                    "WorksheetName":"UDF Statistics",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"50",
+                    "WorksheetName":"QueryStore Options",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"51",
+                    "WorksheetName":"High Aggregate Duration Queries",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"52",
+                    "WorksheetName":"Input Buffer",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"53",
+                    "WorksheetName":"Resumable Index Rebuild",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"54",
+                    "WorksheetName":"Automatic Tuning Options",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"55",
+                    "WorksheetName":"Geo-Replication Link Status",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"Azure SQL Database Diagnostic Information Queries.sql",
+                    "DataTableId":"56",
+                    "WorksheetName":"Azure SQL DB Properties",
+                    "Cell":"A1",
+                    "TableStyle":"Medium2"
+                }
+            ]
+        }
+    ],
+    "Connections": [
+        {
+            "Name":"Connection1",
+            "ConnectionString":"Data Source=<server>.database.windows.net;Initial Catalog=<database>;User ID=<user>;Password=<password>;"
+        }
+    ]
+}

@@ -246,7 +246,7 @@ Your UserParamHash could look like the following:
 ```PowerShell
 Export-AutoReport
     ...
-    -UserParamHash @(@{"LastName"="Mouse"; "FirstName"="Mickey"}, @{"LastName"="Duck"; "FirstName"="Donald"})
+    -UserParamHash @(@{"@LastName"="Mouse"; "@FirstName"="Mickey"}, @{"@LastName"="Duck"; "@FirstName"="Donald"})
 ```
 
 ## Contributing

@@ -1,0 +1,33 @@
+{
+    "Mappings": [
+        {
+            "OutputFileNameTemplate":"$ArTargetConnection`_$(Get-Date -Format yyyy-MM-dd).xlsx",
+            "OutputTemplateName":"SqlClientTemplate.xlsx",
+            "OutputType":"Excel",
+            "SourceMaps": [
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"SqlClient2.sql",
+                    "DataTableId":"0",
+                    "WorksheetName":"Sessions",
+                    "Cell":"A2",
+                    "TableStyle":"Medium2"
+                },
+                {
+                    "DataProviderName":"SqlClient",
+                    "QueryFileName":"SqlClient1.sql",
+                    "DataTableId":"0",
+                    "WorksheetName":"Requests",
+                    "Cell":"A2",
+                    "TableStyle":"Medium2"
+                }
+            ]
+        }
+    ],
+    "Connections": [
+        {
+            "Name":"Connection1",
+            "ConnectionString":"Data Source=<server>.database.windows.net;Initial Catalog=<database>;User ID=<User>;Password=<Password>;"
+        }
+    ]
+}
