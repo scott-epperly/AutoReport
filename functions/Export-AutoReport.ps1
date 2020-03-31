@@ -105,6 +105,9 @@ function Export-AutoReport {
                                     "Excel" {
                                         $autoReport.WriteToOutput([string]$currentOutputFileFullName, $dt[$currentSourceMap.DataTableId], $currentSourceMap.WorksheetName, $currentSourceMap.Cell, $currentSourceMap.TableStyle)
                                     }
+                                    "Delimited" {
+                                        $autoReport.WriteToOutput([string]$currentOutputFileFullName, $dt[$currentSourceMap.DataTableId], $currentSourceMap.Delimiter, $currentSourceMap.Encoding)
+                                    }
                                     # As more output types come on, add logic here
                                 }
                             }

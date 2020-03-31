@@ -4,6 +4,7 @@ class AutoReport {
     #------------#
     #[string]$OutputCreationStep;
 
+    [string]$FriendlyName;
     [Mapping[]]$Mappings;
     [Connection[]]$Connections;
     [Query[]]$Queries;
@@ -25,10 +26,10 @@ class AutoReport {
 
         #read config.json and assign properties
         Write-Debug "[AutoReport.Constructor] Reading config.json"
-        $config = Get-Content (Join-Path $this.tmpDir.FullName "config.json") | ConvertFrom-Json;
+        $config = Get-Content (Join-Path $this.tmpDir.FullName "config.json") -Encoding UTF8 | ConvertFrom-Json;
         
-        #$this.OutputCreationStep = $config.OutputCreationStep;
-        
+        $this.FriendlyName = $config.FriendlyName;
+
         $this.Mappings = $config.Mappings | ForEach-Object {
             $mapping = $_;
             
@@ -42,6 +43,7 @@ class AutoReport {
 
                 switch ($mapping.OutputType) {
                     "Excel" {[SourceMapExcel]($sourceMap);}
+                    "Delimited"{[SourceMapDelimited]($sourceMap)}
                     # As more output types come on, add logic here
                 }
             } 
@@ -134,6 +136,11 @@ class AutoReport {
         else {
             Write-Verbose "No rows found to write to $WorksheetName starting at cell $Cell"
         }
+    }
+
+    # Delimited Output overload
+    [void]WriteToOutput([string]$OutputFileFullName, [System.Data.Datatable]$dt, [string]$Delimiter, [string]$Encoding) {
+        $dt | Export-Csv -Path $OutputFileFullName -Delimiter $Delimiter -Encoding $Encoding -NoTypeInformation -Force;
     }
 
     #----------------#

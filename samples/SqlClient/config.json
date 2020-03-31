@@ -1,4 +1,5 @@
 {
+    "FriendlyName":"Generic SqlClient Sample",
     "Mappings": [
         {
             "OutputFileNameTemplate":"$ArTargetConnection`_$(Get-Date -Format yyyy-MM-dd).xlsx",

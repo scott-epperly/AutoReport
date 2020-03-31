@@ -1,4 +1,5 @@
 {
+    "FriendlyName":"Azure SQL DB Diagnostics",
     "Mappings": [
         {
             "OutputFileNameTemplate":"$ArTargetConnection`_$(Get-Date -Format yyyy-MM-dd).xlsx",

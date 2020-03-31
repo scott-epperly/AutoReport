@@ -46,6 +46,7 @@ You, as the developer, will be creating the .autorpt file to pass to Export-Auto
 Before diving in, let's review an example config.json.  This lays out the basic structure as well as provides an example of the most common output type, Excel:
 ```
 {
+    "FriendlyName":"My Awesome Report",
     "Mappings": [
         {
             "OutputFileNameTemplate":"$ArTargetConnection`_$Query`_$($Get-Date()).xlsx",
@@ -174,8 +175,6 @@ All output to Excel is written into an Excel Table in the mapped Worksheet with 
 
 | Property       | Description
 | -------------- | ------------------------------------- |
-| QueryFileName  | File name of the query to be executed |
-| DataTableId    | The ordinal position of the data table (result set); this is typically 0 |
 | WorksheetName  | Name of the Worksheet (tab) in the Excel template |
 | Cell           | The cell location on the worksheet where you want the data to start writing |
 | TableStyle     | Name of the style of the table to output |
@@ -190,7 +189,17 @@ All output to Excel is written into an Excel Table in the mapped Worksheet with 
 . . .  coming soon!
 
 ###### Delimited OutputType
-. . .  coming soon!
+The Delimited Output type makes use of Export-Csv from PowerShell.  Though not all properties are exposed, below are the properties one must supply:
+| Property       | Description                           |
+| -------------- | ------------------------------------- |
+| Delimiter | Character (or character combination) to separate fields |
+| Encoding | See [-Encoding](https://docs.microsoft.com/en-us/powershell/module/microsoft.powershell.utility/export-csv?view=powershell-7) section for details of possible values.  UTF-8 is likely prefered. |
+
+Note: the output will
+* not include type information (-NoTypeInformation)
+* force overwrite (-Force) of Read-Only marked files
+* quote-identify any field that contains the delimiter character (-UseQuotes AsNeeded)
+
 
 ###### PDF OutputType
 . . .  coming soon!

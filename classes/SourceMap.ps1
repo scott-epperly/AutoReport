@@ -9,3 +9,8 @@ Class SourceMapExcel : SourceMap {
     [string]$Cell;
     [string]$TableStyle;
 }
+
+Class SourceMapDelimited : SourceMap {
+    [string]$Delimiter;
+    [string]$Encoding;
+}
